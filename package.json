@@ -9,5 +9,6 @@
   },
   "scripts": {
     "start": "nodemon server.js"
-  }
+  },
+  "type": "module"
 }
