@@ -4,15 +4,19 @@ const { Schema } = mongoose;
 
 
 const roomSchema = new Schema({
-  user: {
+  users: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-  },
+  }],
   status: {
     type: String,
-    enum: ['available', 'full'],
-    default: 'available'
-  }
+    enum: ['available', 'full', 'in-progress'],
+    default: 'available',
+  },
+  deleted: {
+    type: Boolean,
+    default: false, 
+  },
 });
 
 export default mongoose.model('Room', roomSchema);
